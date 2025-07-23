@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="/"> <img src="./img/logo.svg" alt="logo" /> </a>
+      </header>
+      <main class="box">
+        <h1>Пошук автомобілів</h1>
+        <p class="dataItem">
+          <label> В наявності: </label><span id="carsAmount"> 0 </span>
+        </p>
+        <section class="filtering">
+          <h3>Фільтри</h3>
+          <form>
+            <p>
+              <label for="name">Імʼя</label>
+
+              <input
+                placeholder="Ваше імʼя"
+                type="text"
+                name="name"
+                id="name"
+              />
+            </p>
+            <p>
+              <label for="model">Модель </label>
+              <input placeholder="Camry" type="text" name="model" id="model" />
+            </p>
+            <p>
+              <label for="minPrice">Ціна</label>
+
+              <input
+                placeholder=" Від"
+                type="text"
+                name="minPrice"
+                id="minPrice"
+              />
+              <input
+                placeholder=" До"
+                type="text"
+                name="maxPrice"
+                id="maxPrice"
+              />
+            </p>
+
+            <button type="submit">Надіслати</button>
+          </form>
+        </section>
+        <div class="sortingButtons">
+          <button
+            class="sortingButton"
+            id="lowestPriceFirst"
+            data-sort="sortLow"
+          >
+            Спочатку дешеві
+          </button>
+          <button
+            class="sortingButton"
+            id="highestPriceFirst"
+            data-sort="sortHigh"
+          >
+            Спочатку дорогі
+          </button>
+          <button
+            class="sortingButton reset hiddenButton"
+            id="resetPrice"
+            data-sort="default"
+          >
+            Очистити
+          </button>
+        </div>
+        <div class="carListSection">
+          <ul id="cars"></ul>
+        </div>
+      </main>
+    </div>
+    <script src="./car_script.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+:root {
+  --mainTextColor: #1d2b3c;
+  --secondaryTextColor: #727b86;
+}
+ul {
+  padding: 0;
+}
+p {
+  margin: 0;
+}
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--mainTextColor);
+}
+button {
+  cursor: pointer;
+}
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+header {
+  margin: 16px 0 32px;
+}
+.box {
+  padding: 28px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background-image: url("img/searchCar.svg");
+  background-repeat: no-repeat;
+  background-position: right 26px top 26px;
+}
+h1 {
+  font-size: 24px;
+  line-height: 24px;
+  margin-top: 0px;
+  margin-bottom: 24px;
+}
+
+.dataItem {
+  color: var(--secondaryTextColor);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.dataItem:last-child {
+  margin-bottom: 0;
+}
+.dataItem span {
+  color: var(--mainTextColor);
+}
+.dataItem label {
+  display: inline-block;
+  width: 144px;
+  margin-right: 28px;
+}
+
+.carItem {
+  list-style: none;
+
+  border: 1px solid #240a38;
+  border-radius: 6px;
+
+  margin-bottom: 12px;
+}
+.carHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 16px 20px;
+  border-radius: inherit;
+  transition: background-color 1s;
+}
+.carItem:last-child {
+  margin-bottom: 0;
+}
+.leftPiece p:first-child {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.leftPiece p:last-child {
+  color: var(--secondaryTextColor);
+  font-size: 14px;
+}
+.rightPiece {
+  text-align: right;
+}
+.rightPiece p:first-child {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+.rightPiece p:last-child {
+  line-height: 20px;
+  color: #56b447;
+}
+
+.coloredCircle {
+  display: inline-block;
+  border-radius: 50%;
+  border: black 1px solid;
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+}
+
+.carDetail {
+  border-top: solid 1px rgba(36, 10, 56, 0.1);
+
+  padding: 16px 16px 20px;
+}
+.carItem.hidden .carDetail {
+  display: none;
+}
+.carItem:not(.hidden) .carHeader {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.carHeader:hover {
+  background-color: #f7f8fb;
+}
+.sortingButtons {
+  text-align: right;
+  margin-left: 12;
+  margin-top: 16px;
+}
+.sortingButton {
+  border-radius: 6px;
+  border: 1px solid #240a38;
+  background: #fff;
+  padding: 8px 12px;
+  font-weight: 600;
+}
+.sortingButton.active {
+  background: #240a38;
+  color: #fbfcfd;
+}
+
+.sortingButton.reset {
+  border: none;
+}
+
+.hiddenButton {
+  display: none;
+}
