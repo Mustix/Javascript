@@ -28,7 +28,7 @@ function createCarTemplate({
   //Header
   let carTemplateFactory = `
 <li class="carItem hidden">
-<div class = "carHeader ">
+<div class = "carHeader">
   <div class="leftPiece">
     <p>${brand} ${model} ${year} рік</p>
     <p>Дилер - ${dealerName} ${averageRanking}</p>
@@ -38,23 +38,21 @@ function createCarTemplate({
     <p>В наявності</p>
   </div>
  </div>
- <div class = "carDetail  ">
+ <div class = "carDetail">
     <p class = "dataItem"> <label> Двигун </label> <span > ${engine} </span></p>
      <p class = "dataItem"> <label> Коробка передач </label> <span > ${transmission} </span></p>
-      <p class = "dataItem"> <label>Доступні кольори </label ><span >${colorSelector(
+      <p class = "dataItem"> <label>Доступні кольори </label ><span >${createColoredCircle(
         colorOptions
       )}</span></p>
  </div>
 </li>
 
 `;
-  // Details
-  //console.log(carTemplateFactory);
 
   return carTemplateFactory;
 }
 
-function colorSelector(colors) {
+function createColoredCircle(colors) {
   return colors
     .map((color) => {
       return `<span style = "background: ${color}" class = "coloredCircle"> </span>`;
@@ -93,10 +91,9 @@ function insertCarsItems(carArray) {
   modifiedCarArray.forEach((element) => {
     ulCarObject.insertAdjacentHTML("beforeEnd", createCarTemplate(element));
   });
-  console.log(modifiedCarArray);
 }
 
-function accordeon() {
+function buildAccordeon() {
   let allCars = document.querySelectorAll(".carItem");
 
   allCars.forEach((car) => {
@@ -106,8 +103,6 @@ function accordeon() {
 }
 
 function sortCars(cars) {
-  console.log(this.dataset.sort);
-
   //sort cars
   let holdSortedCards = cars;
   // sort by lowest price
@@ -120,7 +115,7 @@ function sortCars(cars) {
   }
 
   insertCarsItems(holdSortedCards);
-  accordeon();
+  buildAccordeon();
 }
 /////
 /////
@@ -134,35 +129,40 @@ let buttonReset = document.getElementById("resetPrice");
 ///
 ////
 ////
-buttonHigh.addEventListener("click", function () {
+function handleSortingCars() {
+  if (this === buttonReset) {
+    buttonReset.classList.add("hiddenButton");
+  } else {
+    buttonReset.classList.remove("hiddenButton");
+  }
   sortCars.call(this, cars);
-  clickedSorting();
+
   setActiveButton(this);
+}
+
+buttonHigh.addEventListener("click", function () {
+  handleSortingCars.call(this);
 });
 buttonLow.addEventListener("click", function () {
-  sortCars.call(this, cars);
-  clickedSorting();
-  setActiveButton(this);
+  handleSortingCars.call(this);
 });
 buttonReset.addEventListener("click", function () {
-  sortCars.call(this, cars);
-  buttonReset.classList.add("hiddenButton");
-  setActiveButton(this);
+  handleSortingCars.call(this);
 });
-function clickedSorting() {
-  buttonReset.classList.remove("hiddenButton");
-}
 
 function setActiveButton(button) {
   let currentActive = document.querySelector(".sortingButton.active");
-  console.log(currentActive);
-  if (button === buttonReset) {
-    currentActive?.classList?.remove("active");
-  }
+
   if (currentActive === button) return;
   currentActive?.classList?.remove("active");
   button.classList.add("active");
 }
+
+function extractingColors(cars) {
+  colorExtractor;
+}
+
+function filterCircle() {}
 setTotalCarsAmount(cars);
 insertCarsItems(cars);
-accordeon();
+buildAccordeon();

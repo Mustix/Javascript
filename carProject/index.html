@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
 
-    <title>Document</title>
+    <title>CarsFinder</title>
   </head>
   <body>
     <div class="container">
@@ -26,37 +26,62 @@
         <section class="filtering">
           <h3>Фільтри</h3>
           <form>
-            <p>
-              <label for="name">Імʼя</label>
+            <div class="fieldWrapper">
+              <div class="field">
+                <label for="name">Імʼя</label>
 
-              <input
-                placeholder="Ваше імʼя"
-                type="text"
-                name="name"
-                id="name"
-              />
-            </p>
-            <p>
-              <label for="model">Модель </label>
-              <input placeholder="Camry" type="text" name="model" id="model" />
-            </p>
-            <p>
-              <label for="minPrice">Ціна</label>
+                <input
+                  placeholder="Ваше імʼя"
+                  type="text"
+                  name="name"
+                  id="name"
+                />
+              </div>
+              <div class="field">
+                <label for="model">Модель </label>
+                <input
+                  placeholder="Camry"
+                  type="text"
+                  name="model"
+                  id="model"
+                />
+              </div>
+              <div class="field">
+                <label for="minPrice">Ціна</label>
 
-              <input
-                placeholder=" Від"
-                type="text"
-                name="minPrice"
-                id="minPrice"
-              />
-              <input
-                placeholder=" До"
-                type="text"
-                name="maxPrice"
-                id="maxPrice"
-              />
-            </p>
-
+                <input
+                  placeholder="Від"
+                  type="text"
+                  name="minPrice"
+                  id="minPrice"
+                />
+                <input
+                  placeholder=" До"
+                  type="text"
+                  name="maxPrice"
+                  id="maxPrice"
+                />
+              </div>
+              <div class="field">
+                <label for="yearFrom">Рік</label>
+                <input
+                  placeholder=" Від"
+                  type="text"
+                  name="yearFrom"
+                  id="yearFrom"
+                />
+                <input
+                  placeholder=" До"
+                  type="text"
+                  name="yearTo"
+                  id="yearTo"
+                />
+              </div>
+              <div class="field">
+                <label>Колір</label>
+                <ul></ul>
+              </div>
+            </div>
             <button type="submit">Надіслати</button>
           </form>
         </section>
