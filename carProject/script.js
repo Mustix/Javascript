@@ -132,8 +132,18 @@ let buttonReset = document.getElementById("resetPrice");
 function handleSortingCars() {
   if (this === buttonReset) {
     buttonReset.classList.add("hiddenButton");
+    buttonReset.addEventListener(
+      "transitionend",
+      function () {
+        buttonReset.style.display = "none";
+      },
+      { once: true }
+    );
   } else {
-    buttonReset.classList.remove("hiddenButton");
+    buttonReset.style.display = "inline-block";
+    requestAnimationFrame(() => {
+      buttonReset.classList.remove("hiddenButton");
+    });
   }
   sortCars.call(this, cars);
 
@@ -159,8 +169,26 @@ function setActiveButton(button) {
 }
 
 function extractingColors(cars) {
-  colorExtractor;
+  let colorExtractor = cars.flatMap((car) => {
+    return car.features.colorOptions;
+  });
+  let colorsNoDuplicates = colorExtractor.filter((color, index) => {
+    return index === colorExtractor.indexOf(color);
+  });
+  return colorsNoDuplicates;
 }
+function buildCheckboxTemplate(colors) {
+  return colors
+    .map((color) => {
+      return `<label  style =" background:${color};" class="coloredCheckbox ">
+  <input type="checkbox" />
+  <img class = "checkmark" src="./img/checkmark.svg" alt="checkmark" />
+</label>`;
+    })
+    .join("");
+}
+let colorUl = document.getElementById("customCheckboxes");
+colorUl.innerHTML = buildCheckboxTemplate(extractingColors(cars));
 
 function filterCircle() {}
 setTotalCarsAmount(cars);

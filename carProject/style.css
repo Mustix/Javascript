@@ -144,14 +144,12 @@ h3 {
 
 .sortingButton.reset {
   border: none;
-  transform: scale(1);
-
-  transition: transform 200ms ease;
+  transition: opacity 300ms;
+  opacity: 1;
 }
 
-.hiddenButton {
-  position: absolute;
-  transform: scale(0) !important;
+.hiddenButton.sortingButton.reset {
+  opacity: 0;
 }
 
 .fieldWrapper {
@@ -177,4 +175,28 @@ h3 {
 .filtering h3 {
   font-size: 18px;
   line-height: 24px;
+}
+.coloredCheckbox {
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.coloredCheckbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  display: none;
+}
+.coloredCheckbox input:checked ~ .checkmark {
+  display: block;
 }
