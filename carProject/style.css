@@ -1,6 +1,10 @@
 :root {
   --mainTextColor: #1d2b3c;
   --secondaryTextColor: #727b86;
+  --subtleBorderColor: #cbd5e1;
+}
+* {
+  box-sizing: border-box;
 }
 ul {
   padding: 0;
@@ -72,6 +76,7 @@ h3 {
   padding: 20px 16px 20px;
   border-radius: inherit;
   transition: background-color 1s;
+  cursor: pointer;
 }
 .carItem:last-child {
   margin-bottom: 0;
@@ -151,7 +156,15 @@ h3 {
 .hiddenButton.sortingButton.reset {
   opacity: 0;
 }
-
+.filtering {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.filtering h3 {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
 .fieldWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -164,18 +177,30 @@ h3 {
 }
 .field input {
   padding: 16px 20px;
+  border: 1px solid var(--subtleBorderColor);
+  border-radius: 8px;
+}
+.field input::placeholder {
+  color: #64748b;
 }
 .field label {
   font-size: 14px;
   font-weight: 600;
 }
+.complexField {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.complexField input {
+  max-width: 120px;
+}
+.priceField {
+}
 
-.field input {
+.yearField {
 }
-.filtering h3 {
-  font-size: 18px;
-  line-height: 24px;
-}
+
 .coloredCheckbox {
   display: inline-flex;
   vertical-align: middle;
@@ -199,4 +224,64 @@ h3 {
 }
 .coloredCheckbox input:checked ~ .checkmark {
   display: block;
+}
+
+.filterButtons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 7px;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 48px;
+  border: 1px solid #240a38;
+  padding: 16px 32px;
+  min-width: 200px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.secondaryButton {
+  color: #240a38;
+  background-color: transparent;
+}
+
+.primaryButton {
+  color: #fff;
+  background: #240a38;
+}
+footer {
+  text-align: center;
+}
+footer p {
+  margin: 40px 0 40px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  .box {
+    background-position: right 10px top 10px;
+  }
+  .fieldWrapper {
+    grid-template-columns: 1fr;
+  }
+  .carHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .rightPiece {
+    text-align: left;
+  }
+  .btn {
+    min-width: unset;
+    width: 100%;
+  }
 }
