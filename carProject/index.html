@@ -18,127 +18,130 @@
       <header>
         <a href="/"> <img src="./img/logo.svg" alt="logo" /> </a>
       </header>
-      <main class="box">
-        <h1>Пошук автомобілів</h1>
-        <p class="dataItem">
-          <label>В наявності:</label><span id="carsAmount"> 0 </span>
-        </p>
-        <section class="filtering">
-          <h3>Фільтри</h3>
-          <form>
-            <div class="fieldWrapper">
-              <div class="field">
-                <label for="name">Імʼя</label>
+      <div class="mainWrapper">
+        <main class="box">
+          <h1>Пошук автомобілів</h1>
+          <p class="dataItem">
+            <label>В наявності:</label><span id="carsAmount"> 0 </span>
+          </p>
+          <section class="filtering">
+            <h3>Фільтри</h3>
+            <form id="filterForm">
+              <div class="fieldWrapper">
+                <div class="field">
+                  <label for="name">Імʼя</label>
 
-                <input
-                  placeholder="Ваше імʼя"
-                  type="text"
-                  name="name"
-                  id="name"
-                />
-              </div>
-              <div class="field">
-                <label for="model">Модель</label>
-                <input
-                  placeholder="Camry"
-                  type="text"
-                  name="model"
-                  id="model"
-                />
-              </div>
-
-              <div class="field priceField">
-                <label for="minPrice">Ціна</label>
-                <div class="complexField">
                   <input
-                    placeholder="Від"
+                    placeholder="Ваше імʼя"
                     type="text"
-                    name="minPrice"
-                    id="minPrice"
-                  />
-                  <span>-</span>
-                  <input
-                    placeholder="До"
-                    type="text"
-                    name="maxPrice"
-                    id="maxPrice"
+                    name="name"
+                    id="name"
                   />
                 </div>
-              </div>
-              <div class="field yearField">
-                <label for="yearFrom">Рік</label>
-                <div class="complexField">
+                <div class="field">
+                  <label for="model">Модель</label>
                   <input
-                    placeholder="Від"
+                    placeholder="Camry"
                     type="text"
-                    name="yearFrom"
-                    id="yearFrom"
-                  />
-                  <span>-</span>
-                  <input
-                    placeholder="До"
-                    type="text"
-                    name="yearTo"
-                    id="yearTo"
+                    name="model"
+                    id="model"
                   />
                 </div>
-              </div>
-              <div class="field">
-                <label>Колір</label>
-                <ul id="customCheckboxes"></ul>
-              </div>
-            </div>
-            <div class="filterButtons">
-              <button
-                type="reset"
-                class="resetFilter btn secondaryButton"
-                id="resetButton"
-              >
-                Скинути
-              </button>
-              <button
-                type="submit"
-                class="applyFilter btn primaryButton"
-                id="applyButton"
-              >
-                Застосувати
-              </button>
-            </div>
-          </form>
-        </section>
 
-        <div class="sortingButtons">
-          <button
-            class="sortingButton reset hiddenButton"
-            id="resetPrice"
-            data-sort="default"
-            style="display: none"
-          >
-            Очистити
-          </button>
-          <button
-            class="sortingButton"
-            id="lowestPriceFirst"
-            data-sort="sortLow"
-          >
-            Спочатку дешеві
-          </button>
-          <button
-            class="sortingButton"
-            id="highestPriceFirst"
-            data-sort="sortHigh"
-          >
-            Спочатку дорогі
-          </button>
-        </div>
-        <div class="carListSection">
-          <ul id="cars"></ul>
-        </div>
-      </main>
+                <div class="field priceField">
+                  <label for="minPrice">Ціна</label>
+                  <div class="complexField">
+                    <input
+                      placeholder="Від"
+                      type="text"
+                      name="minPrice"
+                      id="minPrice"
+                    />
+                    <span>-</span>
+                    <input
+                      placeholder="До"
+                      type="text"
+                      name="maxPrice"
+                      id="maxPrice"
+                    />
+                  </div>
+                </div>
+                <div class="field yearField">
+                  <label for="yearFrom">Рік</label>
+                  <div class="complexField">
+                    <input
+                      placeholder="Від"
+                      type="text"
+                      name="yearFrom"
+                      id="yearFrom"
+                    />
+                    <span>-</span>
+                    <input
+                      placeholder="До"
+                      type="text"
+                      name="yearTo"
+                      id="yearTo"
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label>Колір</label>
+                  <ul id="customCheckboxes"></ul>
+                </div>
+              </div>
+              <div class="filterButtons">
+                <button
+                  type="reset"
+                  class="resetFilter btn secondaryButton"
+                  id="resetButton"
+                >
+                  Скинути
+                </button>
+                <button
+                  type="submit"
+                  class="applyFilter btn primaryButton"
+                  id="applyButton"
+                >
+                  Застосувати
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <div class="sortingButtons">
+            <button
+              class="sortingButton reset hiddenButton"
+              id="resetPrice"
+              data-sort="default"
+              style="display: none"
+            >
+              Очистити
+            </button>
+            <button
+              class="sortingButton"
+              id="lowestPriceFirst"
+              data-sort="sortLow"
+            >
+              Спочатку дешеві
+            </button>
+            <button
+              class="sortingButton"
+              id="highestPriceFirst"
+              data-sort="sortHigh"
+            >
+              Спочатку дорогі
+            </button>
+          </div>
+          <div class="carListSection">
+            <ul id="cars"></ul>
+          </div>
+        </main>
+      </div>
+      <footer>
+        <p>2025 © Всі права захищені</p>
+      </footer>
     </div>
-    <footer>
-      <p>2025 © Всі права захищені</p>
-    </footer>
+
     <script src="./car_script.js"></script>
     <script src="./script.js"></script>
   </body>

@@ -191,6 +191,17 @@ let colorUl = document.getElementById("customCheckboxes");
 colorUl.innerHTML = buildCheckboxTemplate(extractingColors(cars));
 
 function filterCircle() {}
+
+function receiveFormData() {
+  let form = document.getElementById("filterForm");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    console.log(event);
+
+    console.log("form sumbitted");
+  });
+}
+receiveFormData();
 setTotalCarsAmount(cars);
 insertCarsItems(cars);
 buildAccordeon();

@@ -3,8 +3,12 @@
   --secondaryTextColor: #727b86;
   --subtleBorderColor: #cbd5e1;
 }
+
 * {
   box-sizing: border-box;
+}
+html {
+  height: 100%;
 }
 ul {
   padding: 0;
@@ -15,13 +19,23 @@ p {
 body {
   font-family: "Manrope", sans-serif;
   color: var(--mainTextColor);
+  height: 100%;
+  margin: 0;
 }
 button {
   cursor: pointer;
 }
 .container {
   max-width: 860px;
+  height: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.mainWrapper {
+  flex-grow: 1;
 }
 header {
   margin: 16px 0 32px;
@@ -269,7 +283,6 @@ footer p {
   .box {
     background-position: top 50px center;
     padding-top: 150px;
-    background-size: 150px;
   }
   .fieldWrapper {
     grid-template-columns: 1fr;
@@ -279,11 +292,17 @@ footer p {
     align-items: flex-start;
     gap: 8px;
   }
+  .complexField {
+    width: 100%;
+  }
   .complexField input {
-    max-width: ;
+    max-width: 50%;
   }
   .rightPiece {
     text-align: left;
+  }
+  .dataItem {
+    justify-content: space-between;
   }
   .btn {
     min-width: unset;
